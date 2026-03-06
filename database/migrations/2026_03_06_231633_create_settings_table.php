@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('google_review_url')->nullable();
+            $table->string('reply_to_email')->nullable();
+            $table->string('email_signature')->nullable();
             $table->timestamps();
         });
     }
