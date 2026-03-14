@@ -12,4 +12,9 @@ class Setting extends Model
         'reply_to_email',
         'email_signature'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
