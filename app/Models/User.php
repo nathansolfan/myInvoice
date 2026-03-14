@@ -31,8 +31,19 @@ class User extends Authenticatable
         ];
     }
 
+    //ONE
     public function setting()
     {
         return $this->hasOne(Setting::class);
+    }
+
+    public function customers()
+    {
+        return $this->hasMany(Customer::class)
+    }
+
+    public function reviewRequests()
+    {
+        return $this->hasMany(ReviewRequest::class);
     }
 }
